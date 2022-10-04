@@ -1,4 +1,4 @@
-//package fundamentals;
+package fundamentals;
 
 import java.util.EmptyStackException;
 
@@ -62,27 +62,47 @@ class LinkedStack<E> implements Stack<E> {
         }
     }
 
+    public LinkedStack(){
+        this.top = new Node<>(null,null); //dummy node
+        this.size = 1;
+    }
+
     @Override
     public boolean empty() {
         // TODO Implement empty method
-         return false;
+         return this.size == 1;
     }
 
     @Override
     public E peek() throws EmptyStackException {
         // TODO Implement peek method
-         return null;
+         if (this.empty()){
+             throw new EmptyStackException();
+         } else {
+             E toReturn = this.top.item;
+             return toReturn;
+         }
     }
 
     @Override
     public E pop() throws EmptyStackException {
         // TODO Implement pop method
-         return null;
+         if (this.empty()){
+             throw new EmptyStackException();
+        } else {
+             E toReturn = this.top.item;
+             this.top = this.top.next;
+             this.size--;
+             return toReturn;
+         }
     }
 
     @Override
     public void push(E item) {
         // TODO Implement push method
+        Node<E> toAdd = new Node<>(item,this.top);
+        this.top = toAdd;
+        this.size++;
     }
 }
 
@@ -101,24 +121,42 @@ class ArrayStack<E> implements Stack<E> {
 
     public ArrayStack() {
         array = (E[]) new Object[10];
+        this.size = 0;
     }
 
     @Override
     public boolean empty() {
         // TODO Implement empty method
-         return false;
+
+        return this.size == 0;
     }
 
     @Override
     public E peek() throws EmptyStackException {
-        // TODO Implement peek method
-         return null;
+        if (this.empty()){
+            throw new EmptyStackException();
+        } else {
+            E toReturn = this.array[0];
+            return toReturn;
+        }
     }
 
     @Override
-    public E pop() throws EmptyStackException {
+    public E pop() throws EmptyStackException { //à vérifier
         // TODO Implement pop method
-         return null;
+         if (this.empty()){
+             throw new EmptyStackException();
+         } else {
+             E toReturn = this.array[0];
+             this.array[0] = null;
+
+             for (int i = 1; i < array.length ; i++) {
+                 this.array[i-1] = this.array[i];
+             }
+             this.array[array.length-1] = null;
+             this.size--;
+             return toReturn;
+         }
     }
 
     @Override
