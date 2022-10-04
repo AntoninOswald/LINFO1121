@@ -70,31 +70,31 @@ class LinkedStack<E> implements Stack<E> {
     @Override
     public boolean empty() {
         // TODO Implement empty method
-         return this.size == 1;
+        return this.size == 1;
     }
 
     @Override
     public E peek() throws EmptyStackException {
         // TODO Implement peek method
-         if (this.empty()){
-             throw new EmptyStackException();
-         } else {
-             E toReturn = this.top.item;
-             return toReturn;
-         }
+        if (this.empty()){
+            throw new EmptyStackException();
+        } else {
+            E toReturn = this.top.item;
+            return toReturn;
+        }
     }
 
     @Override
     public E pop() throws EmptyStackException {
         // TODO Implement pop method
-         if (this.empty()){
-             throw new EmptyStackException();
+        if (this.empty()){
+            throw new EmptyStackException();
         } else {
-             E toReturn = this.top.item;
-             this.top = this.top.next;
-             this.size--;
-             return toReturn;
-         }
+            E toReturn = this.top.item;
+            this.top = this.top.next;
+            this.size--;
+            return toReturn;
+        }
     }
 
     @Override
@@ -144,24 +144,36 @@ class ArrayStack<E> implements Stack<E> {
     @Override
     public E pop() throws EmptyStackException { //à vérifier
         // TODO Implement pop method
-         if (this.empty()){
-             throw new EmptyStackException();
-         } else {
-             E toReturn = this.array[0];
-             this.array[0] = null;
+        if (this.empty()){
+            throw new EmptyStackException();
+        } else {
+            E toReturn = this.array[0];
+            this.array[0] = null;
 
-             for (int i = 1; i < array.length ; i++) {
-                 this.array[i-1] = this.array[i];
-             }
-             this.array[array.length-1] = null;
-             this.size--;
-             return toReturn;
-         }
+            for (int i = 1; i < array.length ; i++) {
+                this.array[i-1] = this.array[i];
+            }
+            this.array[array.length-1] = null;
+            this.size--;
+            return toReturn;
+        }
     }
 
     @Override
     public void push(E item) {
         // TODO Implement push method
+        if (this.size == this.array.length) {
+            E[] new_array = (E[]) new Object[this.array.length * 2];
+            for (int i = 0; i < this.array.length; i++) {
+                new_array[i] = this.array[i];
+            }
+            this.array = new_array;
+        }
+        for (int i = this.array.length-2; i >=0; i--) {
+            this.array[i+1] = this.array[i];
+        }
+        this.array[0] = item;
+        this.size++;
     }
 }
 
