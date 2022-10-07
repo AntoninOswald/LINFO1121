@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9beb2e6d-78fa-4a02-8c62-6f7f3854c6d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/LINFO1121.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/LINFO1121S1_S2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/libs/JavaGrading.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/libs/hamcrest-core-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/libs/junit-4.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/src/main/java/fundamentals/Stack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/src/test/java/fundamentals/StackTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/target/classes/fundamentals/ArrayStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/target/classes/fundamentals/LinkedStack$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/target/classes/fundamentals/LinkedStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/target/classes/fundamentals/Stack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack/target/test-classes/fundamentals/StackTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="9beb2e6d-78fa-4a02-8c62-6f7f3854c6d4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,17 +29,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="StackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Stack" />
@@ -102,6 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664907333472</updated>
       <workItem from="1664907338371" duration="1340000" />
+      <workItem from="1665141937741" duration="318000" />
     </task>
     <servers />
   </component>
