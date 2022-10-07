@@ -112,12 +112,14 @@ public abstract class FList<A> implements Iterable<A> {
 
             public boolean hasNext() {
                 // TODO
-                 return false;
+                 return current.isNotEmpty();
             }
 
             public A next() {
                 // TODO
-                 return null;
+                 A elem = current.head();
+                 current = current.tail();
+                 return elem;
             }
 
             public void remove() {
