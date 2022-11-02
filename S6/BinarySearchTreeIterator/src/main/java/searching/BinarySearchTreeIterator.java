@@ -23,7 +23,7 @@ import java.util.Stack;
  * The iterator visits the nodes in this order: 3, 8, 9, 11, 12, 14, 15, 18, 20
  * We ask you to complete the BSTIterator class, which must implement the Iterator interface.
  *
- * The BSTNode are generic over their key (the integers in the example above) and implement the 
+ * The BSTNode are generic over their key (the integers in the example above) and implement the
  * BinaryNode and KeyNode interface available in the utils package.
  *
  * Hint: You have two strategies to implement this iterator Fail-Fast and Fail-Safe
@@ -98,16 +98,17 @@ public class BinarySearchTreeIterator<Key extends Comparable<Key>> implements It
     }
 
     private class BSTIterator implements Iterator<Key> {
-        Stack<BSTNode<Key>> parcour;
+        Stack<BSTNode<Key>> parcours;
         BSTNode<Key> current;
         private int initSize;
 
         BSTIterator(){
-            parcour = new Stack<BSTNode<Key>>();
-            this.initSize = size();
+            //On met sur la stack
+            parcours = new Stack<BSTNode<Key>>();
+            initSize = size();
             current = root;
-            while (current != null){
-                parcour.push(current);
+            while(current != null){
+                parcours.push(current);
                 current = current.left;
             }
 
@@ -116,44 +117,42 @@ public class BinarySearchTreeIterator<Key extends Comparable<Key>> implements It
         @Override
         public boolean hasNext() {
 
-
-
-            if (initSize != size()){
+            if (size() != initSize){
                 throw new ConcurrentModificationException();
             }
-            if (parcour.isEmpty()){
+
+            if (parcours.isEmpty()){
                 return false;
             }
+
             return true;
+
         }
 
         @Override
         public Key next() {
 
-
-
             if (initSize != size()){
                 throw new ConcurrentModificationException();
             }
 
-            if(hasNext() == false){
+            if (hasNext() == false){
                 throw new NoSuchElementException();
             }
 
-            BSTNode<Key> current = parcour.pop();
-            System.out.println(current.key);
+            BSTNode<Key> current = parcours.pop();
             Key toReturn = current.getKey();
-            if (current != null){
-                current =current.right;
-                while (current != null){
-                    parcour.push(current);
+
+            if (current.right != null){
+                current = current.right;
+                while ( current != null){
+                    parcours.push(current);
                     current = current.left;
                 }
             }
 
-
             return toReturn;
-
+            
         }
     }
 

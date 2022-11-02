@@ -36,14 +36,35 @@ public class BinarySearchTree {
     public static Integer ceil(BSTNode<Integer> root, int value) {
 
         if (root == null) return null;
+
         int cmp = root.key.compareTo(value);
-        if (cmp == 0) return root.key;
-        else if (cmp < 0) {
-            return ceil(root.right,value);
-        }
+
+        if (cmp == 0) return value;
+
+        if (cmp < 0) return ceil(root.right,value);
+
         Integer t = ceil(root.left,value);
+
         if (t != null) return t;
-        else return root.key;
+        return root.key;
+
+    }
+
+    public static Integer floor(BSTNode<Integer> root, int value) {
+
+        if (root == null) return null;
+
+        int cmp = root.key.compareTo(value);
+
+        if (cmp == 0) return value;
+
+        if (cmp > 0) return floor(root.left,value);
+
+        Integer t = floor(root.right,value);
+
+        if (t != null) return t;
+        return root.key;
+
     }
 
 
