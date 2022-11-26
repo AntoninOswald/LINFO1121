@@ -1,11 +1,14 @@
 package strings;
 
 
+import org.w3c.dom.Node;
 
+import java.util.PriorityQueue;
+import java.util.Stack;
 
 /**
  * This class is used to construct a Huffman trie from frequencies of letters (in unicode or ASCII).
- * As a reminder, in an Huffman trie nodes are weighted (see the `HuffmanNode` class) by
+ * As a reminder, in a Huffman trie nodes are weighted (see the `HuffmanNode` class) by
  * the frequencies of the character (if lead node) or the sum of the frequencies of its children
  * (if internal node).
  * For example, let us assume that we have the following letters with their associated frequencies:
@@ -27,14 +30,35 @@ package strings;
  */
 public class Huffman {
 
+
+
+
     /**
-     * Constructs an Huffman trie for the frequencies of the characters given in arguments.
+     * Constructs a Huffman trie for the frequencies of the characters given in arguments.
      * The character are implicitely defined by the `freq` array (ranging from 0 to freq.length -1)
      *
      * @param freq the frequencies of the characters
      */
     public static HuffmanNode buildTrie(int [] freq) {
-         return null;
+
+        PriorityQueue<HuffmanNode> pq = new PriorityQueue<HuffmanNode>();
+        int R = freq.length;
+
+        for (char c = 0; c < freq.length ; c++) {
+            if(freq[c] > 0){
+               pq.add(new HuffmanNode(c,freq[c], null,null));
+            }
+        }
+
+        while(pq.size() != 1){
+            HuffmanNode x = pq.poll();
+            HuffmanNode y = pq.poll();
+            HuffmanNode parent = new HuffmanNode(-1,x.getFrequency()+y.getFrequency(),x,y);
+
+            pq.add(parent);
+        }
+
+        return pq.poll();
     }
 }
 
